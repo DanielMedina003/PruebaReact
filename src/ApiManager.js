@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "https://randomuser.me/api/?results=5&nat=es"; // API en español
+const API_URL = "https://randomuser.me/api/?results=5&nat=es"; 
 
 export default function ApiManager() {
   const [data, setData] = useState([]);
@@ -23,20 +23,26 @@ export default function ApiManager() {
   };
 
   return (
-    <div className="p-4 max-w-2xl mx-auto">
-      <h1 className="text-xl font-bold mb-4">Gestor de Usuarios</h1>
-      <button onClick={fetchData} disabled={loading} className="p-2 bg-blue-500 text-white rounded">
-        {loading ? "Cargando..." : "Recargar"}
+    <div className="p-6 max-w-5xl mx-auto bg-white shadow-lg rounded-lg">
+      <h1 className="text-2xl font-bold mb-4 text-center">Gestor de Usuarios</h1>
+      <button 
+        onClick={fetchData} 
+        disabled={loading} 
+        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400"
+      >
+        {loading ? "Cargando..." : "🔄 Recargar"}
       </button>
-      <ul className="mt-4">
+
+      <div className="flex gap-4 mt-4 overflow-x-auto p-2 whitespace-nowrap">
         {data.map((user, index) => (
-          <li key={index} className="border p-2 mt-2 rounded">
-            <strong>{user.name.first} {user.name.last}</strong>  
-            <p>Email: {user.email}</p>
-            <p>Teléfono: {user.phone}</p>
-          </li>
+          <div key={index} className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow min-w-[200px]">
+            <img className="w-20 h-20 rounded-full" src={user.picture.thumbnail} alt={user.name.first} />
+            <p className="font-semibold mt-2">{user.name.first} {user.name.last}</p>  
+            <p className="text-sm text-gray-600">📧 {user.email}</p>
+            <p className="text-sm text-gray-600">📞 {user.phone}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

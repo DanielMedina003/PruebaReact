@@ -1,8 +1,10 @@
+import React from "react";
 import UserList from "./UserList";
+import "./App.css"; // Importamos los estilos CSS
 
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div className="app-container">
       <UserList />
     </div>
   );
