@@ -1,76 +1,44 @@
-/* Estilos generales */
+/* 🏡 General */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Contenedor principal */
-  .app-container {
-    width: 90%;
-    max-width: 800px;
-  }
-  
-  /* Estilos para el UserList */
-  .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Botón */
-  .btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Grid de usuarios */
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  /* Tarjetas de usuario */
-  .card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 200px;
-  }
-  
-  .card img {
-    border-radius: 50%;
-    border: 3px solid #007bff;
-  }
-  
-  .card h2 {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .card p {
-    font-size: 14px;
-    color: gray;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  transition: background 0.3s ease-in-out;
+}
+
+/* 🎨 Modo Oscuro */
+body.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* 📌 Contenedor Principal */
+.app-container {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+}
+
+/* 🎭 Botón de Modo Oscuro */
+.toggle-mode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-mode:hover {
+  background: #0056b3;
+}
